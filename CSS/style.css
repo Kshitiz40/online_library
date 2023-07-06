@@ -1,0 +1,68 @@
+body{
+    background-color: #f7f7f7;
+}
+.carousel_container{
+    width : 90%;
+    display : block;
+    margin : auto;
+    box-sizing: border-box !important;
+    background-color: rgb(93, 77, 77);
+    padding : 50px;
+}
+.carousel_image1{
+    height: 400px;
+}
+.carousel_image2{
+    height : 400px;
+    max-width: 100%;
+    margin : auto;
+}
+.book_detail{
+    margin : 10px;
+    color : white;
+}
+.book_detail p{
+    font-size: 18px;
+}
+.mbottom-35{
+    margin-bottom: 35px;
+}
+.popup_img{
+    position: fixed;
+    top:0; left:0;
+    height : 100%;
+    width : 100%;
+    background-color: rgb(0, 0, 0,.9);
+    z-index: 100;
+    display : none;
+}
+.popup_img span{
+    position: absolute;
+    top:0; right:10px;
+    font-size: 60px;
+    font-weight: bolder;
+    color : white;
+    cursor : pointer;
+    z-index: 100;
+}
+.popup_img img{
+    position: relative;
+    top:30px;
+    display: block;
+    margin : auto;
+    height : 600px;
+    border : 5px solid white;
+    border-radius: 5px;
+    object-fit: cover;
+}
+.container_popup{
+    position : relative;
+}
+@media screen and (max-width: 768px) {
+    .container_popup .popup_img img{
+        width : 90%;
+    }
+}
+.more{
+    color : #9e9e9e;
+}
