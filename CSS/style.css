@@ -1,68 +1,332 @@
-body{
-    background-color: #f7f7f7;
-}
-.carousel_container{
-    width : 90%;
-    display : block;
-    margin : auto;
+/* styling for all */
+* {
     box-sizing: border-box !important;
-    background-color: rgb(93, 77, 77);
-    padding : 50px;
+    margin: 0;
+    padding: 0;
+    font-family: var(--bs-body-font-family);
 }
-.carousel_image1{
+
+
+
+/* styling for navigation bar */
+.nav_bar {
+    height: 50px;
+    box-sizing: border-box;
+}
+
+.bars {
+    display: none;
+}
+
+.bars a {
+    display: block;
+    float: left;
+    height: 50px;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 14px 24px;
+    margin-bottom: 0;
+    color: white;
+}
+
+@media screen and (max-width: 857px) {
+    .bars {
+        display: block;
+    }
+}
+
+.navbar-head {
+    color: rgb(30, 27, 27);
+    float: left;
+    height: 50px;
+    padding-left: 10px;
+    padding-top: 5px;
+    margin-right: 10px;
+    user-select: none;
+    font-size: 30px;
+}
+
+.mylinks a {
+    display: block;
+    float: left;
+    height: 50px;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 14px 14px;
+    margin-bottom: 0;
+    color: white;
+}
+
+.mylinks a:hover {
+    background-color: rgb(83, 80, 80);
+}
+
+@media screen and (max-width: 856px) {
+    .mylinks {
+        display: none;
+        position: absolute;
+        margin-top: 50px;
+        background-color: rgb(132, 112, 112);
+        z-index: 10;
+        width: 60%;
+    }
+
+    .mylinks a {
+        display: block;
+        height: 40px;
+        width: 100%;
+        font-size: 18px;
+        text-decoration: none;
+        border: 1px solid #503c3c;
+        padding: 14px 18px;
+        margin-bottom: 0;
+        color: white;
+    }
+}
+
+.profile {
+    height: 40px;
+    margin-top: 5px;
+    float: right;
+    width: 40px;
+}
+
+.profile_links {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 200px;
+    display: none;
+}
+
+.profile_img {
+    height: 150px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 25px;
+}
+
+.profile_img img {
+    height: 150px;
+    width: 150px;
+    border: none;
+    border-radius: 75px;
+}
+
+.profile_links a {
+    display: block;
+    height: 40px;
+    width: 100%;
+    font-size: 18px;
+    text-decoration: none;
+    border: 1px solid #503c3c;
+    padding: 14px 18px;
+    margin-bottom: 0;
+    color: white;
+}
+
+.profile_links a:hover {
+    background-color: rgb(83, 80, 80);
+}
+.nav_btn{
+    height : 50px;
+    float : right;
+    width : 230px;
+}
+.btn1 a{
+    text-decoration: none;
+}
+
+
+
+/* styling for footer */
+.curved {
+    width: 100%;
+}
+
+.curved svg {
+    display: block;
+    margin-top: 30px;
+}
+
+.foot {
+    width: 100%;
+    background-color: #793f74;
+}
+
+.foot a,li{
+    color: white !important;
+}
+.m-0 {
+    margin: 0 !important;
+}
+
+footer h5 {
+    text-decoration: underline;
+}
+
+.content-fit-height {
+    box-sizing: border-box;
+    height: 20px;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+
+
+/* colors */
+.color-1 {
+    background-color: rgb(132, 112, 112) !important;
+}
+
+.color-2 {
+    background-color: #c0a8a8 !important;
+}
+
+.color-3 {
+    background-color: rgb(93, 77, 77);
+}
+
+.color-active {
+    background-color: rgb(112, 95, 95) !important;
+}
+
+
+/* styling for home page */
+.search-div {
+    height: 30px;
+    box-sizing: border-box;
+}
+
+.search-inp {
+    height: 34px;
+    width: 250px;
+    font-size: 15px;
+    padding: 10px 2px 9px 10px;
+    border: none;
+    margin-right: 5px;
+    margin-top: 8px;
+    border-radius: 10px;
+}
+
+.btn1 {
+    height: 36px;
+    border: 2px solid #cc9ecc;
+    color: #cc9ecc;
+    border-radius: 10px;
+    background-color: rgb(132, 112, 112);
+    margin-right: 10px;
+    margin-top: 8px;
+    width: 100px;
+}
+
+.btn1:hover {
+    color: white;
+    background-color: #c0a8a8;
+}
+
+
+
+/* styling for detail page */
+.carousel_container {
+    width: 90%;
+    display: block;
+    margin: auto;
+    box-sizing: border-box !important;
+    padding: 50px;
+}
+
+.carousel_image1 {
     height: 400px;
 }
-.carousel_image2{
-    height : 400px;
+
+.carousel_image2 {
+    height: 400px;
     max-width: 100%;
-    margin : auto;
+    margin: auto;
 }
-.book_detail{
-    margin : 10px;
-    color : white;
+
+.book_detail {
+    margin: 10px;
+    color: white;
 }
-.book_detail p{
+
+.book_detail p {
     font-size: 18px;
-}
-.mbottom-35{
     margin-bottom: 35px;
 }
-.popup_img{
-    position: fixed;
-    top:0; left:0;
-    height : 100%;
-    width : 100%;
-    background-color: rgb(0, 0, 0,.9);
-    z-index: 100;
-    display : none;
+
+.more {
+    color: #9e9e9e;
 }
-.popup_img span{
+
+.popup_img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 0, 0, .9);
+    z-index: 100;
+    display: none;
+}
+
+.popup_img span {
     position: absolute;
-    top:0; right:10px;
+    top: 0;
+    right: 10px;
     font-size: 60px;
     font-weight: bolder;
-    color : white;
-    cursor : pointer;
+    color: white;
+    cursor: pointer;
     z-index: 100;
 }
-.popup_img img{
+
+.popup_img img {
     position: relative;
-    top:30px;
+    top: 30px;
     display: block;
-    margin : auto;
-    height : 600px;
-    border : 5px solid white;
+    margin: auto;
+    height: 600px;
+    border: 5px solid white;
     border-radius: 5px;
     object-fit: cover;
 }
-.container_popup{
-    position : relative;
-}
+
 @media screen and (max-width: 768px) {
-    .container_popup .popup_img img{
-        width : 90%;
+    .container_popup .popup_img img {
+        width: 90%;
     }
 }
-.more{
-    color : #9e9e9e;
+
+
+
+/* styling for pagination */
+.container_pagination{
+    width : 100%;
+    height : 100px;
+    background-color: aquamarine;
+}
+.pagination_inner{
+    display : block;
+    margin : auto;
+    background-color: aqua;
+}
+
+
+/* styling for profile */
+.container_profile{
+    width : 90%;
+    display: block;
+    margin: auto;
+}
+.profile_img_div{
+    width : 100%;
+    padding-top : 50px;
+}
+.profile_img_div img{
+    height : 200px;
+    width : 200px;
+    display: block;
+    margin : auto;
 }

@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>E-Library Resolving problems online</title>
-    <link rel="stylesheet" href="CSS/top_bottom.css">
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -13,10 +12,10 @@
     <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
 </head>
 
-<body class="mybg">
+<body class="color-2">
     <?php include 'navbar.php'; ?>
     <main class="mybg2">
-        <div class="carousel_container my-4">
+        <div class="carousel_container color-3 my-4">
             <div id="carouselExample" class="carousel slide">
                 <div class="carousel-inner" id="img_large">
                     <div class="carousel-item active">
@@ -51,7 +50,7 @@
             <div class="book_detail">
                 <h1>Gulliver Travels : Voyage to Lilliput</h1>
                 <p><strong>Author : </strong>Jonathan Swift</p>
-                <p class="mbottom-35">Gulliver’s Travels, original title Travels into Several Remote Nations of the World, four-part
+                <p>Gulliver’s Travels, original title Travels into Several Remote Nations of the World, four-part
                     satirical work by Anglo-Irish author Jonathan Swift, published anonymously in 1726 as Travels into
                     Several
                     Remote Nations of the World. A keystone of English literature, it is one of the books that

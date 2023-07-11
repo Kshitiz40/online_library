@@ -18,3 +18,14 @@ function myFunction() {
         x.style.display = "block";
     }
 }
+function profileView()
+{
+    var x = document.getElementById('profile_links');
+    if(x.style.display === "block")
+    {
+        x.style.display = "none";
+    }
+    else{
+        x.style.display = "block";
+    }
+}
