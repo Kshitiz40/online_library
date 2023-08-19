@@ -11,25 +11,10 @@
     width : 500px;
     box-sizing: border-box;
 }
-.container-reg{
-    margin : auto;
-    margin-top: 50px;
-    padding : 20px 10px 10px 10px;
-    background-color: #c8d5d1;
-    height:600px;
-    width : 500px;
-    box-sizing: border-box;
-}
-.sign_head{
-    width : 250px;
-    display : block;
-    margin : auto;
-    font-size: 40px;
-}
-.label_div{
-    height : 25px;
-    width : 100%;
-    margin-top : 3px;
+@media screen and (max-width: 550px) {
+    .container {
+        padding : 20px 2px 2px 2px;
+    }
 }
 .input_div{
     height : 50px;
@@ -46,10 +31,6 @@
     width : 100%;
     margin-top : 20px;
     margin-bottom : 10px;
-}
-.result_div{
-    height : 20px;
-    width : 100%;
 }
 .sign_reset_div{
     width : 300px;
@@ -71,10 +52,6 @@
     border : 3px solid rgb(73, 84, 84);
     background-color: rgb(206, 225, 225);
 
-}
-.inputf-img{
-    margin-bottom : 8px;
-    width : 200px;
 }
 .btn{
     height : 35px;
@@ -99,12 +76,6 @@
 }
 .error_para{
     color : red;
-    line-height: 7px;
-    margin-left : 110px;
-    height : 10px;
-}
-.success_para{
-    color : green;
     line-height: 7px;
     margin-left : 110px;
     height : 10px;
@@ -182,4 +153,28 @@ a{
 .new:hover{
     background-color: white;
     color: #3930ff;
+}
+.div_inner{
+    display : block;
+    margin : auto;
+    width : 300px;
+}
+.radio_btn{
+    height: 20px;
+    width : 20px;
+}
+.radio_label{
+    font-size: 20px;
+}
+.margin-less{
+    margin-left: 30px;
+}
+.margin-more{
+    margin-left: 49px;
+}
+.margin-normal{
+    margin-left : 26px;
+}
+#submit_btn{
+    display : none;
 }

@@ -94,5 +94,7 @@ function resetPara() {
   document.getElementById('username_error').innerText = "";
   document.getElementById('email_error').innerText = "";
   document.getElementById('password_error').innerText = "";
-  document.getElementById('confirm_pass_error').innerText = "";
+  document.getElementById('confirm_pass_error').innerText = ""
+  document.getElementById('register_error').innerText = "";
+  document.getElementById('register_success').innerText = "";;
 }

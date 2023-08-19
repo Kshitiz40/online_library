@@ -1,12 +1,18 @@
 <?php 
+
 $msg_error = "";
-$msg_success = "";
+include 'session.php';
 if(isset($_POST['submit']))
 {
     include 'connect.php';
+    $pattern = "/'/";
     $bookname = $_POST['bookname'];
+    $bookname = preg_replace($pattern,"''",$bookname);
     $author = $_POST['author'];
+    $author = preg_replace($pattern,"''",$author);
+    $category = $_POST['category'];
     $Description = $_POST['detail'];
+    $Description = preg_replace($pattern,"''",$Description);
 
     $targetDir = "uploads1/";
 
@@ -26,6 +32,7 @@ if(isset($_POST['submit']))
     $file4 = $targetDir.$filename4;
     $fileType4 = pathinfo($file4,PATHINFO_EXTENSION);
 
+    $check = $conn->query("SELECT * FROM ``");
     if(!empty($_FILES['image1']['name']) && !empty($_FILES['image2']['name']) && !empty($_FILES['image3']['name']) && !empty($_FILES['image4']['name']))
     {
         $allowTypes = array('jpg','jpeg','png');
@@ -33,11 +40,15 @@ if(isset($_POST['submit']))
         {
             if(move_uploaded_file($_FILES['image1']['tmp_name'],$file1) && move_uploaded_file($_FILES['image2']['tmp_name'],$file2) && move_uploaded_file($_FILES['image3']['tmp_name'],$file3) && move_uploaded_file($_FILES['image4']['tmp_name'],$file4))
             {
-                $sql = "INSERT INTO `bookdetail` (`bookName`,`authorName`,`bookDetail`,`img1`,`img2`,`img3`,`img4`) VALUES ('$bookname','$author','$Description','$filename1','$filename2','$filename3','$filename4')";
+                $sql = "INSERT INTO `bookdetail` (`bookName`,`authorName`,`bookDetail`,`img1`,`img2`,`img3`,`img4`,`category`) VALUES ('$bookname','$author','$Description','$filename1','$filename2','$filename3','$filename4','$category')";
                 $result = $conn->query($sql);
                 if($result)
                 {
-                    $msg_success = "book added successfully";
+                    $sql1 = "SELECT `id` FROM `bookdetail` WHERE `bookName`='$bookname'";
+                    $result1 = $conn->query($sql);
+                    $id = $conn->insert_id;
+                    $_SESSION['bookAdded'] = true;
+                    header("location:detail.php?id=$id");
                 }
                 else{
                     $msg_error = "some error occured";
@@ -69,7 +80,7 @@ if(isset($_POST['submit']))
 </head>
 
 <body>
-    <div class="container-reg">
+    <div class="container" style="width : 600px;">
         <div class="formHead-register">
             Add Book
         </div>
@@ -79,6 +90,17 @@ if(isset($_POST['submit']))
             </div>
             <div class="input_div">
                 <input type="text" class="inputf" name="author" id="author" placeholder="Author name">
+            </div>
+            <div class="input_div">
+                <div class="div_inner">
+                <input type="radio" id="adventure" name="category" value="Adventure" class="radio_btn margin-normal">
+               <label for="adventure" class="radio_label">Adventure</label>
+               <input type="radio" id="romance" name="category" value="Romance" class="radio_btn margin-less">
+               <label for="romance" class="radio_label">romance</label><br>
+               <input type="radio" id="fantasy" name="category" value="Fantasy" class="radio_btn margin-normal">
+               <label for="fantasy" class="radio_label">Fantasy</label>
+               <input type="radio" id="mystery" name="category" value="Mystery" class="radio_btn margin-more">
+               <label for="mystery" class="radio_label">mystery</label>
             </div>
             <div class="input_div">
                 <textarea class="inputf" name="detail" id="detail" cols="30" rows="10" placeholder="description of the book"></textarea>
@@ -91,16 +113,13 @@ if(isset($_POST['submit']))
             </div>
             <div class="btn_div">
                 <div class="sign_reset_div">
-                    <button class="btn" id="submit_btn" type="Submit" name="submit">Submit</button>
+                    <button class="btn" id="submit" type="Submit" name="submit">Submit</button>
                     <button class="btn" id="reset_btn" type="reset">Reset</button>
                 </div>
             </div>
         </form>
         <p class="error_para">
             <?php echo $msg_error; ?>
-        </p>
-        <p class="success_para">
-            <?php echo $msg_success; ?>
         </p>
     </div>
 </body>

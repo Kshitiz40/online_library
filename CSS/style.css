@@ -89,6 +89,13 @@
     margin-top: 5px;
     float: right;
     width: 40px;
+    box-sizing: border-box;
+}
+
+.profile img{
+    height : 40px;
+    width : 40px;
+    border-radius: 20px;
 }
 
 .profile_links {
@@ -133,8 +140,9 @@
     float : right;
     width : 230px;
 }
-.btn1 a{
+.btn_1 a{
     text-decoration: none;
+    color : white;
 }
 
 
@@ -163,6 +171,11 @@
 
 footer h5 {
     text-decoration: underline;
+    color : white !important;
+}
+
+footer p{
+    color : white !important;
 }
 
 .content-fit-height {
@@ -192,6 +205,50 @@ footer h5 {
 }
 
 
+/* styling for landing page*/
+.landing_page{
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+.container_lp{
+    position : absolute;
+    width : 600px;
+    height : 400px;
+    color : white;
+    top : 300px;
+    left : 50px;
+}
+.container_lp a{
+    text-decoration: none;
+    border: 2px solid white;
+    color : white;
+    padding : 10px 40px;
+    margin-left: 10px;
+    margin-top : 20px;
+    width: 150px;
+    display: block;
+    float: left;
+    font-weight: bolder;
+    font-size: large;
+}
+.container_lp a:hover{
+    color : black !important;
+    background-color : white;
+}
+.lines{
+    font-size: 60px;
+}
+.line2{
+    font-size: 80px;
+    height: 90px;
+}
+.color-4{
+    background-color: #060505;
+}
+.landing_page_head{
+    color : white !important;
+}
+
 /* styling for home page */
 .search-div {
     height: 30px;
@@ -209,10 +266,10 @@ footer h5 {
     border-radius: 10px;
 }
 
-.btn1 {
+.btn_1 {
     height: 36px;
     border: 2px solid #cc9ecc;
-    color: #cc9ecc;
+    color: white !important;
     border-radius: 10px;
     background-color: rgb(132, 112, 112);
     margin-right: 10px;
@@ -220,11 +277,31 @@ footer h5 {
     width: 100px;
 }
 
-.btn1:hover {
+.btn_1:hover {
     color: white;
     background-color: #c0a8a8;
 }
+ 
+.btn-group a{
+    text-decoration: none;
+    color: grey;
+}
 
+#livesearch{
+    /* display : none; */
+    margin-left: 42px;
+    width: 360px;
+    background: white;
+    z-index: 10;
+    position: absolute;
+    margin-top: 5px;
+}
+.searchResult{
+    border : 1px solid black;
+}
+.searchResult a{
+    font-size: 20px;
+}
 
 
 /* styling for detail page */
@@ -238,6 +315,8 @@ footer h5 {
 
 .carousel_image1 {
     height: 400px;
+    max-width: 100%;
+    margin : auto;
 }
 
 .carousel_image2 {
@@ -299,18 +378,65 @@ footer h5 {
     }
 }
 
+.container_popup_delete{
+    position: fixed;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    background-color: rgb(0, 0, 0, .9);
+    z-index: 100;
+    display : none;
+}
+.popup{
+    background-color: white;
+    height : 160px;
+    width : 540px;
+    padding : 20px 20px;
+    margin : auto;
+    margin-top : 300px;
+    border-radius : 20px;
+}
+.popup span{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 60px;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+    z-index: 100;
+}
+.popup form div{
+    margin : auto;
+    width: fit-content;
+}
+.m10{
+    margin-left : 20px;
+}
+
 
 
 /* styling for pagination */
-.container_pagination{
-    width : 100%;
-    height : 100px;
-    background-color: aquamarine;
-}
-.pagination_inner{
-    display : block;
-    margin : auto;
-    background-color: aqua;
+.pagination {   
+    display: block;  
+    width : fit-content;
+    margin : auto; 
+}   
+.pagination a {   
+    font-weight:bold;   
+    font-size:18px;   
+    color: black;   
+    float: left;   
+    padding: 8px 16px;   
+    text-decoration: none;   
+    border:1px solid black;   
+}   
+.pagination a.active {   
+        background-color: pink;   
+}   
+.pagination a:hover:not(.active) {   
+    background-color: skyblue;   
 }
 
 

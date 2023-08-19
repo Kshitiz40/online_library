@@ -1,3 +1,11 @@
+<?php
+    
+    if(isset($_POST['logout']))
+    {
+        include 'session_destroy.php';
+    }
+    
+?>
 <!doctype html>
 <html lang="en">
 
@@ -28,9 +36,45 @@
             <a href="Wishlist.php"><i class="fa fa-fw fa-tag"></i>Wishlist</a>
             <a href="contact.php"><i class="fa fa-fw fa-envelope"></i>Contact</a>
         </div>
-        <div class="nav_btn">
-            <button class="btn1"><a href="register.php">Sign up</a></button>
-            <button class="btn1"><a href="login.php">Sign in</a></button>
+        <form method="get" id="sort_form">
+            <select name="sort" onchange="this.form.submit()" form="sort_form">
+                <option value="asc" 
+                <?php 
+                if(isset($_GET['sort']))
+                {
+                    if($_GET['sort']=='asc')
+                    {
+                        echo "selected";
+                    }
+                } 
+                ?>>A-Z</option>
+                <option value="dsc"
+                <?php 
+                if(isset($_GET['sort']))
+                {
+                    if($_GET['sort']=='dsc')
+                    {
+                        echo "selected";
+                    }
+                } 
+                ?>>Z-A</option>
+                <!-- <option value="time-asc">Latest</option>
+                <option value="time-desc">Oldest</option> -->
+            </select>
+        </form>
+        <div class="profile" onclick="profileView()">
+            <img src="https://p1.hiclipart.com/preview/386/684/972/face-icon-user-icon-design-user-profile-share-icon-avatar-black-and-white-silhouette-png-clipart.jpg" alt="">
+        </div>
+        <div class="profile_links color-1" id="profile_links">
+            <div class="profile_img">
+                <img src="https://media.istockphoto.com/id/1146517111/photo/taj-mahal-mausoleum-in-agra.jpg?s=612x612&w=0&k=20&c=vcIjhwUrNyjoKbGbAQ5sOcEzDUgOfCsm9ySmJ8gNeRk="
+                    alt="">
+            </div>
+            <a href="">View profile</a>
+            <a href="">Edit profile</a>
+            <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
+                <button type="submit" name="logout">logout</button>
+            </form>
         </div>
     </nav>
     <script src="js/normal.js"></script>
